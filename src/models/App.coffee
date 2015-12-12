@@ -50,7 +50,6 @@ class window.App extends Backbone.Model
     console.log 'calling dealer stand'
     @get('dealerHand').stand() if @get('gameOn')
 
-
   # endGame method:
     # for each card in dealer, make sure revealed is true (by calling flip)
     # determine winner and alert who it is
@@ -88,25 +87,4 @@ class window.App extends Backbone.Model
     # setTimeout -> alert alertMessage
     @trigger('endGame', alertMessage)
 
-
     @set 'gameOn', false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
