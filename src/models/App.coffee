@@ -85,5 +85,28 @@ class window.App extends Backbone.Model
       else if playerBestScore < dealerBestScore then alertMessage = 'Dealer wins!'
       else alertMessage = 'Tied!'
     # call alert on the alert message
-    setTimeout -> alert alertMessage
+    # setTimeout -> alert alertMessage
+    @trigger('endGame', alertMessage)
+
+
     @set 'gameOn', false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
