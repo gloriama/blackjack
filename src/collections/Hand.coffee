@@ -22,11 +22,21 @@ class window.Hand extends Backbone.Collection
     # when there is an ace, it offers you two scores - the original score, and score + 10.
     [@minScore(), @minScore() + 10 * @hasAce()]
 
-  # must have a stand method
+  stand: ->
+    # console.log('got here')
     # trigger stand event
+    @trigger('stand', @)
 
-  # isBust method
+  isBust: -> @minScore() > 21
     # simply returns if minScore is > 21
-
-  # maxScore method
+  
+  bestScore: ->
     # returns the max non-bust score
+    # maxScore = -1
+    # for score in scores
+      # maxScore = score if score < 21
+    # maxScore
+    maxScore = -1
+    for score in scores
+      maxScore = score if score < 21
+    maxScore
